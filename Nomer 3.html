@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 900px;
+            min-height: 500px;
+            border: 2px solid rgb(241, 0, 0);
+            margin: auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+        #pesan {
+            position: absolute;
+            bottom: 0;
+            width: 830px;
+        }
+        button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="hasil"></h2>
+    <input type="text" id="pesan" onchange="kirim()">
+    <button onclick="kirim()">Kirim</button>
+    
+
+    <script>
+        let masukan = document.getElementById("pesan")
+        let hasil = document.getElementById("hasil")
+        let penampung = ""
+
+        function kirim() {
+            penampung += masukan.value + "<br>"
+            hasil.innerHTML = penampung 
+            masukan.value = ""
+        }
+
+    </script>
+</body>
+</html>

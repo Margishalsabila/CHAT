@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kalkuolator Kurs</title> 
+</head>
+<body>
+    <input type="number" class="input">
+
+    <select class="kurs">
+        <option value="usd">Dollar US</option>
+        <option value="sgd">Dollar Singapura</option>
+        <option value="rm">Ringgit Malaysia</option>
+        <option value="yen">Yen Jepang</option>
+        <option value="eur">Euro</option>
+        <option value="sar">Riyal Arab Saudi</option>
+    </select>
+    
+    <button class="hitung">hitung</button>
+
+    <p class="hasil">Nilai Rupiah :</p>
+
+    <script>
+        const input = document.querySelector(".input");
+        const kursSelect = document.querySelector(".kurs");
+        const hitungbtn = document.querySelector(".hitung");
+        const hasil = document.querySelector(".hasil");
+
+        const kursMataUang = {
+            "usd" :  9915,
+            "sgd" : 13472,
+            "rm"  :   874, 
+            "yen" :   120,
+            "eur" : 15888,
+            "sar" :  3592,
+        }
+
+        hitungbtn.addEventListener("click", function() {
+            console.log("button diklik");
+            if (kursSelect.value == "usd"){
+                hasil.innerHTML = "Nilai Rupiah :" + input.value * kursMataUang.usd;
+            }
+            else if (kursSelect.value == "sgd") {
+                hasil.innerHTML = "Nilai Rupiah :" + input.value * kursMataUang.sgd;
+            }
+            else if (kursSelect.value == "eur"){
+                hasil.innerHTML = "Nilai Rupiah :" + input.value * kursMataUang.eur;
+            }
+            else if (kursSelect.value == "rm"){
+                hasil.innerHTML = "Nilai Rupiah :" + input.value * kursMataUang.rm;
+            }
+            else if (kursSelect.value == "yen"){
+                hasil.innerHTML = "Nilai Rupiah :" + input.value * kursMataUang.yen;
+            }
+            else if (kursSelect.value == "sar"){
+                hasil.innerHTML = "Nilai Rupiah :" + input.value * kursMataUang.sar;
+            }
+        })
+    </script>
+</body>
+</html>

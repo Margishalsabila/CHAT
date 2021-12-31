@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas no 1</title>
+</head>
+<body>
+    <h2>User Login</h2>
+    <form id="login" onsubmit="login(event)">
+        <p>Nama</p>
+        <input type="text" name="nama" id="nama" value="" placeholder="" size="30" onchange="login()">
+        <p>Password</p>
+        <input type="text" name="pass" id="pass" value="" placeholder="" size="30" onchange="login()">
+        <input type="submit" value="Login" name="kirim">
+    </form>
+    <script>
+        function login(e) {
+    e.preventDefault()
+    const nama = document.getElementById("nama").value
+    const pass = document.getElementById("pass").value
+    if (nama == "margi salsabila" && pass == "Margi140701") {
+        alert("Login Sukses")
+        location.href = "Berhasil.html"
+    }
+    else {
+        alert("Login Gagal")
+        window.Location.reload()
+    }
+}
+    </script>
+</body>
+</html>
